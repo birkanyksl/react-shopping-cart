@@ -1,6 +1,10 @@
 import { ProductItemPropTypes } from "../propTypes";
+import { CartContext } from "../context/CartContext";
+import { useContext } from "react";
 
-const ProductItem = ({ product, setCart }) => {
+const ProductItem = ({ product }) => {
+  const { setCart } = useContext(CartContext);
+
   const addToCart = (product) => {
     setCart((prevState) => [...prevState, product]);
   };
